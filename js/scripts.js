@@ -32,3 +32,14 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+//Java code for lambda function to update dynamodb table 
+const counter = document.querySelector(".counter-number");
+async function updateCounter() {
+    let response = await fetch("https://4cofuqp6id4amlgdkxheb75lge0kufub.lambda-url.ca-central-1.on.aws/");
+    let data = await response.json();
+    counter.innerHTML = ' Views: ${data}';
+}
+
+updateCounter();
+
+                               
